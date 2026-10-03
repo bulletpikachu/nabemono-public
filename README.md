@@ -2,25 +2,18 @@
 
 ## Run with Docker
 
-Install Docker with the Compose plugin, then create the environment file:
+Create the environment file:
 
 ```sh
 cp .env.example .env
 ```
 
-Fill in the tokens, API keys, channel ID, and model names in `.env`, then start
+Fill in `.env`, then start
 the bot:
 
 ```sh
 docker compose up -d --build
 docker compose logs -f nabemono
-```
-
-To deploy a new version:
-
-```sh
-git pull
-docker compose up -d --build
 ```
 
 Stop the bot with `docker compose down`. The `nabemono-data` volume retains
@@ -69,51 +62,14 @@ daily DM uses the last successful cache and marks it as stale. Feed URLs are
 encrypted in SQLite, omitted from responses and logs, and deleted with cached
 events on disconnect.
 
-## Web dashboard and music controller on Synology
+## Web dashboard and music controller
 
 The bot starts a password-protected persona dashboard and music controller on
 container port 8080. The dashboard at `/` edits the authoritative facts returned
 by `persona_search`; changes take effect without restarting the bot. Each time
 the bot joins a voice channel it posts an unguessable `/s/{token}` controller
-link, which expires when the bot leaves. The public HTTPS endpoint can stay on a
-VPS running Caddy while the bot remains on a Synology NAS.
+link, which expires when the bot leaves.
 
-1. Install Tailscale on the Synology NAS and the VPS, then authenticate both to
-   the same tailnet.
-2. On the NAS, get its stable Tailscale IPv4 address from the Tailscale package
-   or with `tailscale ip -4`.
-3. In the bot's `.env`, set:
-
-   ```dotenv
-   MUSIC_WEB_PUBLISH_HOST=100.x.y.z
-   MUSIC_WEB_PORT=8080
-   MUSIC_WEB_BASE_URL=https://nabemono.bulletmaji.me
-   PERSONA_DASHBOARD_PASSWORD=use-a-long-random-password
-   ```
-
-   `MUSIC_WEB_PUBLISH_HOST` binds Docker's published port only to the NAS's
-   Tailscale interface. If the Synology firewall is enabled, allow TCP 8080
-   from the tailnet, not from the public internet.
-4. Point `nabemono.bulletmaji.me` at the VPS and add this to its
-   Caddyfile, replacing the upstream address with the NAS's Tailscale address:
-
-   ```caddy
-   nabemono.bulletmaji.me {
-       reverse_proxy 100.x.y.z:8080
-   }
-   ```
-
-5. Reload Caddy and rebuild the bot with `docker compose up -d --build`.
-
-Caddy terminates HTTPS and preserves the original `Host` header by default.
-The connection from the VPS to the NAS is encrypted by Tailscale, and no router
-port needs to be forwarded to the NAS. The controller supports its live event
-stream through Caddy without additional configuration.
-
-The dashboard fails closed with HTTP 503 when
-`PERSONA_DASHBOARD_PASSWORD` is empty. Its login cookie is only marked secure
-when `MUSIC_WEB_BASE_URL` uses HTTPS, so production deployments must keep that
-value set to the public HTTPS origin.
 
 ### Radio stations
 
