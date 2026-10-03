@@ -1,0 +1,309 @@
+[
+{
+    "type": "function",
+    "name": "reminder",
+    "description": "Schedule a reminder for the user. Give either seconds (a delay from now) or at (a clock time), optionally with one recurrence: repeat_seconds for a fixed interval, or repeat_time for a daily/weekly clock time. With only repeat_time, the first reminder fires at the next matching time. If the user names a clock time that has already passed today, use tomorrow.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "reminder_message": {
+                "type": "string",
+                "description": "The message to send to the user when the reminder goes off"
+            },
+            "seconds": {
+                "type": "integer",
+                "description": "Delay from now in seconds, for requests like 'in 5 minutes' (300). Do not combine with at."
+            },
+            "at": {
+                "type": "string",
+                "description": "ISO 8601 datetime for requests like 'at 5pm' or 'tomorrow at 9', e.g. 2026-09-23T17:00:00. A value without an offset is read in timezone. Do not combine with seconds."
+            },
+            "repeat_seconds": {
+                "type": "integer",
+                "minimum": 60,
+                "description": "Repeat every N seconds after each reminder, for requests like 'every 30 minutes' (1800). Minimum 60. Do not combine with repeat_time."
+            },
+            "repeat_time": {
+                "type": "string",
+                "description": "Local 24-hour HH:MM clock time to repeat at, for requests like 'every day at 9am' (09:00). Do not combine with repeat_seconds."
+            },
+            "repeat_weekdays": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+                },
+                "description": "Days that repeat_time applies to, for requests like 'every weekday'. Omit for every day. Only valid with repeat_time."
+            },
+            "timezone": {
+                "type": "string",
+                "description": "IANA timezone for at and repeat_time, e.g. America/New_York. Defaults to America/Los_Angeles."
+            }
+        },
+        "required": ["reminder_message"]
+        }
+    },
+{
+    "type": "function",
+    "name": "list_reminders",
+    "description": "List the user's active reminders with their ids, messages, next fire times, and repeat rules. Use this to find the id of a reminder the user wants to cancel.",
+    "parameters": {
+        "type": "object",
+        "properties": {}
+    }
+},
+{
+    "type": "function",
+    "name": "cancel_reminder",
+    "description": "Cancel one of the user's active reminders by id. Call list_reminders first if you don't know the id.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "reminder_id": {
+                "type": "integer",
+                "description": "The id of the reminder to cancel"
+            }
+        },
+        "required": ["reminder_id"]
+    }
+},
+{
+    "type": "function",
+    "name": "canvas_upcoming",
+    "description": "List the requesting user's upcoming Canvas assignments and calendar events. Use this when they ask what is due today, this week, or over the next several days. The user must connect their private feed with /canvas connect first.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "days": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30,
+                "description": "Optional number of calendar days to include. Omit to use the user's configured summary window."
+            }
+        }
+    }
+},
+{
+    "type": "function",
+    "name": "interim_message",
+    "description": "Send a short Discord message to the user before continuing with other tools. Use this to acknowledge a lookup or longer task, such as 'searching that up..'. Call this before other tools in the same turn. Do not use this for the final answer.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "message": {
+                "type": "string",
+                "description": "The short message to send immediately"
+            }
+        },
+        "required": ["message"]
+    }
+},
+{
+    "type": "function",
+    "name": "read_channel_history",
+    "description": "Read or search recent messages in the current Discord channel. Use this to read further back in context or find messages matching a query. Cannot read other channels.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 200,
+                "description": "Maximum number of matching messages to return (default 50)"
+            },
+            "query": {
+                "type": "string",
+                "description": "Optional case-insensitive search against message text and author names"
+            },
+            "before": {
+                "type": "string",
+                "description": "Optional ISO timestamp or Discord message ID. Only return messages older than this."
+            },
+            "after": {
+                "type": "string",
+                "description": "Optional ISO timestamp or Discord message ID. Only return messages newer than this."
+            },
+            "author": {
+                "type": "string",
+                "description": "Optional username or user ID to restrict results to one author"
+            }
+        }
+    }
+},
+{
+    "type": "function",
+    "name": "send_file",
+    "description": "Create a .txt or .docx file from text and upload it to the current Discord channel. Use this to deliver a summary or document as an attachment.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "filename": {
+                "type": "string",
+                "description": "The file name to use, without a path. The extension is set from format."
+            },
+            "content": {
+                "type": "string",
+                "description": "The full text to put in the file"
+            },
+            "format": {
+                "type": "string",
+                "enum": ["txt", "docx"],
+                "description": "File format to create"
+            },
+            "caption": {
+                "type": "string",
+                "description": "Optional short message to send with the file"
+            }
+        },
+        "required": ["filename", "content", "format"]
+    }
+},
+{
+    "type": "function",
+    "name": "maps_search",
+    "description": "Look up places with Google Maps: restaurants, shops, hours, reviews, and what is nearby. Omit latitude and longitude to search from the UC Irvine campus. Pass both only when the user names a different place. Include each returned source name and Google Maps url in the reply.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The place question to answer, such as 'coffee shops within a 10-minute walk' or 'is Cha for Tea open'"
+            },
+            "latitude": {
+                "type": "number",
+                "description": "Latitude for 'near here' queries. Omit to use the UC Irvine campus."
+            },
+            "longitude": {
+                "type": "number",
+                "description": "Longitude for 'near here' queries. Omit to use the UC Irvine campus."
+            }
+        },
+        "required": ["query"]
+    }
+},
+{
+    "type": "function",
+    "name": "web_search",
+    "description": "Search the web for current information using Brave Search",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The query to search for"
+            },
+            "time_range": {
+                "type": "string",
+                "enum": ["day", "week", "month", "year"],
+                "description": "Optional freshness window for search results"
+            }
+        },
+        "required": ["query"]
+    }
+},
+{
+    "type": "function",
+    "name": "visit_page",
+    "description": "Visit a web page and read its visible text. Use after web_search when a result's snippet is not enough.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "The http or https URL to visit"
+            }
+        },
+        "required": ["url"]
+    }
+},
+{
+    "type": "function",
+    "name": "wikipedia_search",
+    "description": "Search the local English Wikipedia dump for articles. Prefer this over web_search for general knowledge.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The topic or article name to search for"
+            }
+        },
+        "required": ["query"]
+    }
+},
+{
+    "type": "function",
+    "name": "wikipedia_page",
+    "description": "Read a local Wikipedia article by title or path returned from wikipedia_search.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "The article title or path to open"
+            }
+        },
+        "required": ["title"]
+    }
+},
+{
+    "type": "function",
+    "name": "music_queue",
+    "description": "Inspect the current song and upcoming music queue for this Discord server. Use this before choosing music that should fit the current queue or mood.",
+    "parameters": {
+        "type": "object",
+        "properties": {}
+    }
+},
+{
+    "type": "function",
+    "name": "youtube_search",
+    "description": "Search YouTube directly through yt-dlp and return playable video titles, durations, and direct YouTube URLs. Use this instead of web_search when selecting music, then pass a result URL to music_play.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "Song title, artist, album, or music search query"
+            },
+            "max_results": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10,
+                "description": "Maximum number of YouTube results to return (default 5)"
+            }
+        },
+        "required": ["query"]
+    }
+},
+{
+    "type": "function",
+    "name": "music_play",
+    "description": "Play or queue a direct HTTPS YouTube video or playlist URL in the requesting user's voice channel. This accepts URLs only, not search text. When asked to choose a fitting song, first call music_queue, then use youtube_search to find a direct YouTube URL, then call music_play.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "url": {
+                "type": "string",
+                "description": "A direct HTTPS youtube.com, music.youtube.com, or youtu.be video or playlist URL"
+            }
+        },
+        "required": ["url"]
+    }
+},
+{
+    "type": "function",
+    "name": "persona_search",
+    "description": "Search authoritative facts about your own biography, preferences, history, and identity. Always use this before answering a personal question about yourself.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "A short description of the personal information to search for, such as 'favorite color' or 'age'"
+            }
+        },
+        "required": ["query"]
+    }
+}
+]

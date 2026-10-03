@@ -1,0 +1,1184 @@
+[
+  {
+    "id": "months",
+    "category": "abbrev-date",
+    "input": "on jan. 5, feb. 6, mar. 7, apr. 8, jun. 9, jul. 10, aug. 11, sep. 12, sept. 13, oct. 14, nov. 15 and dec. 16. busy year",
+    "expected": [
+      "on jan. 5, feb. 6, mar. 7, apr. 8, jun. 9, jul. 10, aug. 11, sep. 12, sept. 13, oct. 14, nov. 15 and dec. 16",
+      "busy year"
+    ]
+  },
+  {
+    "id": "weekday-word-undersplit",
+    "category": "abbrev-date",
+    "input": "we sat in the sun. it was nice",
+    "expected": [
+      "we sat in the sun. it was nice"
+    ]
+  },
+  {
+    "id": "weekdays",
+    "category": "abbrev-date",
+    "input": "free mon. tue. tues. wed. thu. thur. thurs. fri. sat. or sun. evenings. ok",
+    "expected": [
+      "free mon. tue. tues. wed. thu. thur. thurs. fri. sat. or sun. evenings",
+      "ok"
+    ]
+  },
+  {
+    "id": "search-may-vs-jan",
+    "category": "abbrev-date",
+    "input": "announced in may. out jan. 14",
+    "expected": [
+      "announced in may",
+      "out jan. 14"
+    ]
+  },
+  {
+    "id": "etc-mid",
+    "category": "abbrev-latin",
+    "input": "i like apples, oranges, etc. what about you",
+    "expected": [
+      "i like apples, oranges, etc. what about you"
+    ]
+  },
+  {
+    "id": "latin",
+    "category": "abbrev-latin",
+    "input": "try e.g. apples or i.e. red ones vs. pears, cf. the list by smith et al. with approx. 5 kinds, viz. these, esp. ripe ones, incl. misc. stuff. done",
+    "expected": [
+      "try e.g. apples or i.e. red ones vs. pears, cf. the list by smith et al. with approx. 5 kinds, viz. these, esp. ripe ones, incl. misc. stuff",
+      "done"
+    ]
+  },
+  {
+    "id": "org-address",
+    "category": "abbrev-latin",
+    "input": "acme inc. and globex corp. merged with initech ltd., wayne bros. and lee co. in the govt. dept. on 5th ave. near elm rd. and park blvd. by the univ. assn. building, est. 1999. cool",
+    "expected": [
+      "acme inc. and globex corp. merged with initech ltd., wayne bros. and lee co. in the govt. dept. on 5th ave. near elm rd. and park blvd. by the univ. assn. building, est. 1999",
+      "cool"
+    ]
+  },
+  {
+    "id": "no-digit-undersplit",
+    "category": "abbrev-number",
+    "input": "i said no. 5 times he asked",
+    "expected": [
+      "i said no. 5 times he asked"
+    ]
+  },
+  {
+    "id": "no-hash",
+    "category": "abbrev-number",
+    "input": "it's the no. #1 song. lol",
+    "expected": [
+      "it's the no. #1 song",
+      "lol"
+    ]
+  },
+  {
+    "id": "no-real-word",
+    "category": "abbrev-number",
+    "input": "i said no. then he left",
+    "expected": [
+      "i said no",
+      "then he left"
+    ]
+  },
+  {
+    "id": "no-repeated",
+    "category": "abbrev-number",
+    "input": "no. no. no.",
+    "expected": [
+      "no",
+      "no",
+      "no"
+    ]
+  },
+  {
+    "id": "no-user-example",
+    "category": "abbrev-number",
+    "input": "the Model no. 5 is my favorite. it's fast",
+    "expected": [
+      "the Model no. 5 is my favorite",
+      "it's fast"
+    ]
+  },
+  {
+    "id": "numdep-real-words-1",
+    "category": "abbrev-number",
+    "input": "turn up the vol. wait a sec. ask ed. blame the ref. i ate a fig.",
+    "expected": [
+      "turn up the vol",
+      "wait a sec",
+      "ask ed",
+      "blame the ref",
+      "i ate a fig"
+    ]
+  },
+  {
+    "id": "numdep-real-words-2",
+    "category": "abbrev-number",
+    "input": "i love art. ask the op. one more pt. new ep. it's rated pg. lets go",
+    "expected": [
+      "i love art",
+      "ask the op",
+      "one more pt",
+      "new ep",
+      "it's rated pg",
+      "lets go"
+    ]
+  },
+  {
+    "id": "numdep-uppercase",
+    "category": "abbrev-number",
+    "input": "see Fig. 3 and No. 5. OK",
+    "expected": [
+      "see Fig. 3 and No. 5",
+      "OK"
+    ]
+  },
+  {
+    "id": "numdep-with-numbers-1",
+    "category": "abbrev-number",
+    "input": "read vol. 3, ch. 12, pg. 40 and pp. 41-45. then fig. 2 and eq. 7. done",
+    "expected": [
+      "read vol. 3, ch. 12, pg. 40 and pp. 41-45",
+      "then fig. 2 and eq. 7",
+      "done"
+    ]
+  },
+  {
+    "id": "numdep-with-numbers-2",
+    "category": "abbrev-number",
+    "input": "watch ep. 4 of pt. 2, then sec. 3, art. 5, ver. 2, op. 27, ref. 9, tbl. 1, nos. 3, figs. 4, vols. 2, chap. 6 and ed. 3. ok",
+    "expected": [
+      "watch ep. 4 of pt. 2, then sec. 3, art. 5, ver. 2, op. 27, ref. 9, tbl. 1, nos. 3, figs. 4, vols. 2, chap. 6 and ed. 3",
+      "ok"
+    ]
+  },
+  {
+    "id": "rev-both-lists",
+    "category": "abbrev-number",
+    "input": "i heard the engine rev. it was loud",
+    "expected": [
+      "i heard the engine rev. it was loud"
+    ]
+  },
+  {
+    "id": "v-letter-word",
+    "category": "abbrev-number",
+    "input": "my fav letter is v. it looks cool",
+    "expected": [
+      "my fav letter is v. it looks cool"
+    ]
+  },
+  {
+    "id": "v-versus",
+    "category": "abbrev-number",
+    "input": "it's cats v. dogs. dogs win",
+    "expected": [
+      "it's cats v. dogs",
+      "dogs win"
+    ]
+  },
+  {
+    "id": "music-ep-pt",
+    "category": "abbrev-number",
+    "input": "ep. 12 dropped. pt. 2 of the ost is out too.",
+    "expected": [
+      "ep. 12 dropped",
+      "pt. 2 of the ost is out too"
+    ]
+  },
+  {
+    "id": "newline-beats-abbrev",
+    "category": "abbrev-title",
+    "input": "talk to dr.\nsmith\nmodel no.\n5 is best",
+    "expected": [
+      "talk to dr",
+      "smith",
+      "model no",
+      "5 is best"
+    ]
+  },
+  {
+    "id": "title-capitalized",
+    "category": "abbrev-title",
+    "input": "Dr. Smith said hi. ok",
+    "expected": [
+      "Dr. Smith said hi",
+      "ok"
+    ]
+  },
+  {
+    "id": "titles-common",
+    "category": "abbrev-title",
+    "input": "mr. smith, mrs. jones, ms. lee, dr. who and prof. oak met st. nick. cool",
+    "expected": [
+      "mr. smith, mrs. jones, ms. lee, dr. who and prof. oak met st. nick",
+      "cool"
+    ]
+  },
+  {
+    "id": "titles-rare",
+    "category": "abbrev-title",
+    "input": "sr. and jr. staff, sgt. pepper, capt. hook, lt. dan, gen. grievous, hon. judge ito, gov. tate, sen. brown, rep. green, pres. lincoln, mt. fuji and ft. knox. wow",
+    "expected": [
+      "sr. and jr. staff, sgt. pepper, capt. hook, lt. dan, gen. grievous, hon. judge ito, gov. tate, sen. brown, rep. green, pres. lincoln, mt. fuji and ft. knox",
+      "wow"
+    ]
+  },
+  {
+    "id": "bracket-and-brace",
+    "category": "brackets",
+    "input": "[note: old. ignore it] anyway. {foo. bar} ok",
+    "expected": [
+      "[note: old. ignore it] anyway",
+      "{foo. bar} ok"
+    ]
+  },
+  {
+    "id": "paren-balanced-protects",
+    "category": "brackets",
+    "input": "i left (it was late. i was tired) and slept. the end",
+    "expected": [
+      "i left (it was late. i was tired) and slept",
+      "the end"
+    ]
+  },
+  {
+    "id": "paren-nested",
+    "category": "brackets",
+    "input": "i quit (well (sort of. not really) kinda. maybe) today. bye",
+    "expected": [
+      "i quit (well (sort of. not really) kinda. maybe) today",
+      "bye"
+    ]
+  },
+  {
+    "id": "paren-terminator-inside-close",
+    "category": "brackets",
+    "input": "whatever (not my problem.) moving on",
+    "expected": [
+      "whatever (not my problem.) moving on"
+    ]
+  },
+  {
+    "id": "paren-then-period-splits",
+    "category": "brackets",
+    "input": "i'm tired (long day). going to bed.",
+    "expected": [
+      "i'm tired (long day)",
+      "going to bed"
+    ]
+  },
+  {
+    "id": "paren-unbalanced-close-emoticon-list",
+    "category": "brackets",
+    "input": "sure :) sounds good. 1) eat. 2) sleep",
+    "expected": [
+      "sure :) sounds good",
+      "1) eat",
+      "2) sleep"
+    ]
+  },
+  {
+    "id": "paren-unbalanced-open",
+    "category": "brackets",
+    "input": "i mean (sort of. it's complicated",
+    "expected": [
+      "i mean (sort of",
+      "it's complicated"
+    ]
+  },
+  {
+    "id": "code-adjacent-blocks",
+    "category": "code-block",
+    "input": "```\nfirst. one\n```\n```\nsecond. one\n```",
+    "expected": [
+      "```\nfirst. one\n```",
+      "```\nsecond. one\n```"
+    ]
+  },
+  {
+    "id": "code-fence-opens-mid-line",
+    "category": "code-block",
+    "input": "ok. try this ```py\nprint('hi. there')\n```",
+    "expected": [
+      "ok",
+      "try this",
+      "```py\nprint('hi. there')\n```"
+    ]
+  },
+  {
+    "id": "code-indented-fence-in-list",
+    "category": "code-block",
+    "input": "1. install it:\n   ```bash\n   pip install nabemono\n   ```\n2. run it. done",
+    "expected": [
+      "1. install it:",
+      "```bash\n   pip install nabemono\n   ```",
+      "2. run it",
+      "done"
+    ]
+  },
+  {
+    "id": "code-lang-periods-blank-lines",
+    "category": "code-block",
+    "input": "here's the fix.\n```python\nx = 1. \ny = foo.bar()\n\n# done. ok\nprint(x)\n```\nshould work now.",
+    "expected": [
+      "here's the fix",
+      "```python\nx = 1. \ny = foo.bar()\n\n# done. ok\nprint(x)\n```",
+      "should work now"
+    ]
+  },
+  {
+    "id": "code-no-lang-intact-whitespace",
+    "category": "code-block",
+    "input": "```\nfirst line.\n\n\n\tsecond line...  \n```",
+    "expected": [
+      "```\nfirst line.\n\n\n\tsecond line...  \n```"
+    ]
+  },
+  {
+    "id": "code-single-line-fence",
+    "category": "code-block",
+    "input": "run ```npm install. npm start``` and wait",
+    "expected": [
+      "run",
+      "```npm install. npm start```",
+      "and wait"
+    ]
+  },
+  {
+    "id": "code-text-after-closing-fence",
+    "category": "code-block",
+    "input": "```\nthe end. or not\n``` pretty neat. right?\nyeah.",
+    "expected": [
+      "```\nthe end. or not\n```",
+      "pretty neat",
+      "right?",
+      "yeah"
+    ]
+  },
+  {
+    "id": "code-two-blocks-with-text",
+    "category": "code-block",
+    "input": "old:\n```\nfoo()\n```\nnew:\n\n```py\nbar(). baz()\n```\nbetter.",
+    "expected": [
+      "old:",
+      "```\nfoo()\n```",
+      "new:",
+      "```py\nbar(). baz()\n```",
+      "better"
+    ]
+  },
+  {
+    "id": "code-unclosed-no-trailing-newline",
+    "category": "code-block",
+    "input": "look:\n```\nwhile true. do\n  x",
+    "expected": [
+      "look:",
+      "```\nwhile true. do\n  x\n```"
+    ]
+  },
+  {
+    "id": "code-unclosed-trailing-newline",
+    "category": "code-block",
+    "input": "try this:\n```js\nconsole.log(1). foo()\n",
+    "expected": [
+      "try this:",
+      "```js\nconsole.log(1). foo()\n```"
+    ]
+  },
+  {
+    "id": "code-exec-two-blocks",
+    "category": "code-block",
+    "input": "ran it. output's below\n```python\nnums = [3, 1, 2]\nprint(sorted(nums))\n```\n```\n[1, 2, 3]\n```\nsorted. as expected.",
+    "expected": [
+      "ran it",
+      "output's below",
+      "```python\nnums = [3, 1, 2]\nprint(sorted(nums))\n```",
+      "```\n[1, 2, 3]\n```",
+      "sorted",
+      "as expected"
+    ]
+  },
+  {
+    "id": "realistic-combo",
+    "category": "combo",
+    "input": "ok so mr. smith from the u.s. said the model no. 5 costs $5.99... idk. i said no. then he left lol\n1. buy it\n2. return it.",
+    "expected": [
+      "ok so mr. smith from the u.s. said the model no. 5 costs $5.99... idk",
+      "i said no",
+      "then he left lol",
+      "1. buy it",
+      "2. return it"
+    ]
+  },
+  {
+    "id": "discord-custom-emoji",
+    "category": "discord",
+    "input": "nice <:blob:123456>. <a:dance:789>! lets go",
+    "expected": [
+      "nice <:blob:123456>",
+      "<a:dance:789>!",
+      "lets go"
+    ]
+  },
+  {
+    "id": "discord-role-nick-channel-mentions",
+    "category": "discord",
+    "input": "ask <@!123> or <@&456>. they're in <#789>. go",
+    "expected": [
+      "ask <@!123> or <@&456>",
+      "they're in <#789>",
+      "go"
+    ]
+  },
+  {
+    "id": "discord-timestamp",
+    "category": "discord",
+    "input": "meeting is <t:1700000000:R>. don't be late",
+    "expected": [
+      "meeting is <t:1700000000:R>",
+      "don't be late"
+    ]
+  },
+  {
+    "id": "discord-user-mention",
+    "category": "discord",
+    "input": "<@123456789012345678> stop. seriously",
+    "expected": [
+      "<@123456789012345678> stop",
+      "seriously"
+    ]
+  },
+  {
+    "id": "ellipsis-end",
+    "category": "ellipsis",
+    "input": "hmm...",
+    "expected": [
+      "hmm..."
+    ]
+  },
+  {
+    "id": "ellipsis-end-variants",
+    "category": "ellipsis",
+    "input": "idk..\nidk....\nidk…",
+    "expected": [
+      "idk..",
+      "idk....",
+      "idk…"
+    ]
+  },
+  {
+    "id": "ellipsis-leading",
+    "category": "ellipsis",
+    "input": "... anyway. bye",
+    "expected": [
+      "... anyway",
+      "bye"
+    ]
+  },
+  {
+    "id": "ellipsis-question",
+    "category": "ellipsis",
+    "input": "you did what...? no way…! really",
+    "expected": [
+      "you did what...? no way…! really"
+    ]
+  },
+  {
+    "id": "ellipsis-then-sentence",
+    "category": "ellipsis",
+    "input": "wait... what. no way",
+    "expected": [
+      "wait... what",
+      "no way"
+    ]
+  },
+  {
+    "id": "ellipsis-variants-mid",
+    "category": "ellipsis",
+    "input": "hmm.. idk... maybe.... fine… ok",
+    "expected": [
+      "hmm.. idk... maybe.... fine… ok"
+    ]
+  },
+  {
+    "id": "question-dotdot",
+    "category": "ellipsis",
+    "input": "really?.. ok",
+    "expected": [
+      "really?.. ok"
+    ]
+  },
+  {
+    "id": "initials-name",
+    "category": "initial",
+    "input": "j. k. rowling wrote it. i liked it",
+    "expected": [
+      "j. k. rowling wrote it",
+      "i liked it"
+    ]
+  },
+  {
+    "id": "pronoun-i",
+    "category": "initial",
+    "input": "so did i. then we left. me too, so did i.",
+    "expected": [
+      "so did i",
+      "then we left",
+      "me too, so did i"
+    ]
+  },
+  {
+    "id": "single-letter-word",
+    "category": "initial",
+    "input": "i got a b. then i cried",
+    "expected": [
+      "i got a b. then i cried"
+    ]
+  },
+  {
+    "id": "initialism-chain",
+    "category": "initialism",
+    "input": "he's a.k.a. the goat, has a ph.d. from the u.k. and lives in d.c. lol",
+    "expected": [
+      "he's a.k.a. the goat, has a ph.d. from the u.k. and lives in d.c. lol"
+    ]
+  },
+  {
+    "id": "initialism-mid",
+    "category": "initialism",
+    "input": "i moved to the u.s. last year. it's ok",
+    "expected": [
+      "i moved to the u.s. last year",
+      "it's ok"
+    ]
+  },
+  {
+    "id": "initialism-ps",
+    "category": "initialism",
+    "input": "ok bye. p.s. i love you",
+    "expected": [
+      "ok bye",
+      "p.s. i love you"
+    ]
+  },
+  {
+    "id": "initialism-time-mid",
+    "category": "initialism",
+    "input": "meet at 5 p.m. tomorrow. bring snacks",
+    "expected": [
+      "meet at 5 p.m. tomorrow",
+      "bring snacks"
+    ]
+  },
+  {
+    "id": "mixedcase-us-open",
+    "category": "initialism",
+    "input": "the U.S. Open final is on Sun. at 4 p.m. ET.",
+    "expected": [
+      "the U.S. Open final is on Sun. at 4 p.m. ET"
+    ]
+  },
+  {
+    "id": "inline-code-after-ellipsis-then-period",
+    "category": "inline-code",
+    "input": "wait... `npm i`. then run it",
+    "expected": [
+      "wait... `npm i`",
+      "then run it"
+    ]
+  },
+  {
+    "id": "inline-code-multiple-spans",
+    "category": "inline-code",
+    "input": "`foo. bar` and `baz. qux`. yes",
+    "expected": [
+      "`foo. bar` and `baz. qux`",
+      "yes"
+    ]
+  },
+  {
+    "id": "inline-code-question-exclaim",
+    "category": "inline-code",
+    "input": "type `are you sure? y/n!` and hit enter. easy",
+    "expected": [
+      "type `are you sure? y/n!` and hit enter",
+      "easy"
+    ]
+  },
+  {
+    "id": "inline-code-sentence-break",
+    "category": "inline-code",
+    "input": "run `pip install foo. then bar` first. then restart",
+    "expected": [
+      "run `pip install foo. then bar` first",
+      "then restart"
+    ]
+  },
+  {
+    "id": "inline-code-unmatched-backtick",
+    "category": "inline-code",
+    "input": "the ` key is weird. i never use it",
+    "expected": [
+      "the ` key is weird",
+      "i never use it"
+    ]
+  },
+  {
+    "id": "code-long-block-rechunked",
+    "category": "length",
+    "input": "```py\n# item 000. item 001. item 002. item 003. item 004. item 005. item 006. item 007. item 008. item 009. item 010. item 011. item 012. item 013. item 014. item 015. item 016. item 017. item 018. item 019. item 020. item 021. item 022. item 023. item 024. item 025. item 026. item 027. item 028. item 029. item 030. item 031. item 032. item 033. item 034. item 035. item 036. item 037. item 038. item 039. item 040. item 041. item 042. item 043. item 044. item 045. item 046. item 047. item 048. item 049. item 050. item 051. item 052. item 053. item 054. item 055. item 056. item 057. item 058. item 059. item 060. item 061. item 062. item 063. item 064. item 065. item 066. item 067. item 068. item 069. item 070. item 071. item 072. item 073. item 074. item 075. item 076. item 077. item 078. item 079. item 080. item 081. item 082. item 083. item 084. item 085. item 086. item 087. item 088. item 089. item 090. item 091. item 092. item 093. item 094. item 095. item 096. item 097. item 098. item 099.\n# item 100. item 101. item 102. item 103. item 104. item 105. item 106. item 107. item 108. item 109. item 110. item 111. item 112. item 113. item 114. item 115. item 116. item 117. item 118. item 119. item 120. item 121. item 122. item 123. item 124. item 125. item 126. item 127. item 128. item 129. item 130. item 131. item 132. item 133. item 134. item 135. item 136. item 137. item 138. item 139. item 140. item 141. item 142. item 143. item 144. item 145. item 146. item 147. item 148. item 149. item 150. item 151. item 152. item 153. item 154. item 155. item 156. item 157. item 158. item 159. item 160. item 161. item 162. item 163. item 164. item 165. item 166. item 167. item 168. item 169. item 170. item 171. item 172. item 173. item 174. item 175. item 176. item 177. item 178. item 179. item 180. item 181. item 182. item 183. item 184. item 185. item 186. item 187. item 188. item 189. item 190. item 191. item 192. item 193. item 194. item 195. item 196. item 197. item 198. item 199.\n```",
+    "expected": [
+      "```py\n# item 000. item 001. item 002. item 003. item 004. item 005. item 006. item 007. item 008. item 009. item 010. item 011. item 012. item 013. item 014. item 015. item 016. item 017. item 018. item 019. item 020. item 021. item 022. item 023. item 024. item 025. item 026. item 027. item 028. item 029. item 030. item 031. item 032. item 033. item 034. item 035. item 036. item 037. item 038. item 039. item 040. item 041. item 042. item 043. item 044. item 045. item 046. item 047. item 048. item 049. item 050. item 051. item 052. item 053. item 054. item 055. item 056. item 057. item 058. item 059. item 060. item 061. item 062. item 063. item 064. item 065. item 066. item 067. item 068. item 069. item 070. item 071. item 072. item 073. item 074. item 075. item 076. item 077. item 078. item 079. item 080. item 081. item 082. item 083. item 084. item 085. item 086. item 087. item 088. item 089. item 090. item 091. item 092. item 093. item 094. item 095. item 096. item 097. item 098. item 099.\n```",
+      "```py\n# item 100. item 101. item 102. item 103. item 104. item 105. item 106. item 107. item 108. item 109. item 110. item 111. item 112. item 113. item 114. item 115. item 116. item 117. item 118. item 119. item 120. item 121. item 122. item 123. item 124. item 125. item 126. item 127. item 128. item 129. item 130. item 131. item 132. item 133. item 134. item 135. item 136. item 137. item 138. item 139. item 140. item 141. item 142. item 143. item 144. item 145. item 146. item 147. item 148. item 149. item 150. item 151. item 152. item 153. item 154. item 155. item 156. item 157. item 158. item 159. item 160. item 161. item 162. item 163. item 164. item 165. item 166. item 167. item 168. item 169. item 170. item 171. item 172. item 173. item 174. item 175. item 176. item 177. item 178. item 179. item 180. item 181. item 182. item 183. item 184. item 185. item 186. item 187. item 188. item 189. item 190. item 191. item 192. item 193. item 194. item 195. item 196. item 197. item 198. item 199.\n```"
+    ]
+  },
+  {
+    "id": "long-code-python",
+    "category": "length",
+    "input": "here's the full script. ran it too\n```python\nimport math\nimport time\nfrom functools import lru_cache\n\n\ndef is_prime(n: int) -> bool:\n    \"\"\"trial division. fine for small n, slow for big ones.\"\"\"\n    if n < 2:\n        return False\n    if n % 2 == 0:\n        return n == 2\n    limit = int(math.isqrt(n))\n    for d in range(3, limit + 1, 2):\n        if n % d == 0:\n            return False\n    return True\n\n\ndef sieve(limit: int) -> list[int]:\n    \"\"\"sieve of eratosthenes. returns every prime <= limit.\"\"\"\n    flags = [True] * (limit + 1)\n    flags[0] = flags[1] = False\n    for i in range(2, math.isqrt(limit) + 1):\n        if flags[i]:\n            for j in range(i * i, limit + 1, i):\n                flags[j] = False\n    return [i for i, ok in enumerate(flags) if ok]\n\n\n@lru_cache(maxsize=None)\ndef fib(n: int) -> int:\n    \"\"\"nth fibonacci number. fib(0) == 0, fib(1) == 1.\"\"\"\n    return n if n < 2 else fib(n - 1) + fib(n - 2)\n\n\ndef collatz_steps(n: int) -> int:\n    \"\"\"how many steps until n hits 1? nobody has proven it always does.\"\"\"\n    steps = 0\n    while n != 1:\n        n = n // 2 if n % 2 == 0 else 3 * n + 1\n        steps += 1\n    return steps\n\n\ndef longest_collatz(limit: int) -> tuple[int, int]:\n    best_n, best_steps = 1, 0\n    for n in range(1, limit):\n        s = collatz_steps(n)\n        if s > best_steps:\n            best_n, best_steps = n, s\n    return best_n, best_steps\n\n\ndef digit_sum(n: int) -> int:\n    \"\"\"sum of decimal digits. e.g. 2**15 = 32768, so the answer is 26.\"\"\"\n    return sum(int(c) for c in str(n))\n\n\ndef main() -> None:\n    start = time.perf_counter()\n    primes = sieve(10_000)\n    print(f\"primes below 10k: {len(primes)}\")\n    print(f\"last five: {primes[-5:]}\")\n    print(f\"is 7919 prime? {is_prime(7919)}\")\n    print(f\"fib(90) = {fib(90)}\")\n    n, steps = longest_collatz(100_000)\n    print(f\"longest collatz chain under 100k: n={n}, steps={steps}\")\n    print(f\"pi to 10 places: {math.pi:.10f}\")\n    print(f\"e to 10 places: {math.e:.10f}\")\n    print(f\"golden ratio: {(1 + math.sqrt(5)) / 2:.10f}\")\n    twin = [(p, p + 2) for p in primes if p + 2 in set(primes)]\n    print(f\"twin prime pairs below 10k: {len(twin)}\")\n    print(f\"largest twin pair: {twin[-1]}\")\n    print(f\"digit sum of 2**1000: {digit_sum(2 ** 1000)}\")\n    elapsed = time.perf_counter() - start\n    print(f\"done. took {elapsed:.3f}s\")\n\n\nif __name__ == \"__main__\":\n    main()\n```\nruns in like 2 sec.",
+    "expected": [
+      "here's the full script",
+      "ran it too",
+      "```python\nimport math\nimport time\nfrom functools import lru_cache\n\n\ndef is_prime(n: int) -> bool:\n    \"\"\"trial division. fine for small n, slow for big ones.\"\"\"\n    if n < 2:\n        return False\n    if n % 2 == 0:\n        return n == 2\n    limit = int(math.isqrt(n))\n    for d in range(3, limit + 1, 2):\n        if n % d == 0:\n            return False\n    return True\n\n\ndef sieve(limit: int) -> list[int]:\n    \"\"\"sieve of eratosthenes. returns every prime <= limit.\"\"\"\n    flags = [True] * (limit + 1)\n    flags[0] = flags[1] = False\n    for i in range(2, math.isqrt(limit) + 1):\n        if flags[i]:\n            for j in range(i * i, limit + 1, i):\n                flags[j] = False\n    return [i for i, ok in enumerate(flags) if ok]\n\n\n@lru_cache(maxsize=None)\ndef fib(n: int) -> int:\n    \"\"\"nth fibonacci number. fib(0) == 0, fib(1) == 1.\"\"\"\n    return n if n < 2 else fib(n - 1) + fib(n - 2)\n\n\ndef collatz_steps(n: int) -> int:\n    \"\"\"how many steps until n hits 1? nobody has proven it always does.\"\"\"\n    steps = 0\n    while n != 1:\n        n = n // 2 if n % 2 == 0 else 3 * n + 1\n        steps += 1\n    return steps\n\n\ndef longest_collatz(limit: int) -> tuple[int, int]:\n    best_n, best_steps = 1, 0\n    for n in range(1, limit):\n        s = collatz_steps(n)\n        if s > best_steps:\n            best_n, best_steps = n, s\n    return best_n, best_steps\n\n\ndef digit_sum(n: int) -> int:\n    \"\"\"sum of decimal digits. e.g. 2**15 = 32768, so the answer is 26.\"\"\"\n    return sum(int(c) for c in str(n))\n\n\ndef main() -> None:\n    start = time.perf_counter()\n    primes = sieve(10_000)\n    print(f\"primes below 10k: {len(primes)}\")\n    print(f\"last five: {primes[-5:]}\")\n    print(f\"is 7919 prime? {is_prime(7919)}\")\n    print(f\"fib(90) = {fib(90)}\")\n    n, steps = longest_collatz(100_000)\n    print(f\"longest collatz chain under 100k: n={n}, steps={steps}\")\n```",
+      "```python\n    print(f\"pi to 10 places: {math.pi:.10f}\")\n    print(f\"e to 10 places: {math.e:.10f}\")\n    print(f\"golden ratio: {(1 + math.sqrt(5)) / 2:.10f}\")\n    twin = [(p, p + 2) for p in primes if p + 2 in set(primes)]\n    print(f\"twin prime pairs below 10k: {len(twin)}\")\n    print(f\"largest twin pair: {twin[-1]}\")\n    print(f\"digit sum of 2**1000: {digit_sum(2 ** 1000)}\")\n    elapsed = time.perf_counter() - start\n    print(f\"done. took {elapsed:.3f}s\")\n\n\nif __name__ == \"__main__\":\n    main()\n```",
+      "runs in like 2 sec"
+    ]
+  },
+  {
+    "id": "long-many-short-sentences",
+    "category": "length",
+    "input": "st. louis sits right where the missouri river meets the mississippi. it was founded in 1764 by pierre laclede and auguste chouteau as a fur trading post. the gateway arch was finished on oct. 28, 1965 and opened to visitors in 1967. it's approx. 630 ft. tall and exactly as wide as it is tall, which is kind of neat. the city hosted the 1904 world's fair and the u.s. olympics that same year. those were the first olympics held in north america. the cardinals have won 11 world series titles, second only to the yankees. anheuser-busch has been brewing there since 1852. the city is famous for toasted ravioli, gooey butter cake, and provel cheese. forest park is bigger than central park by about 500 acres. it holds the zoo, the art museum, and the science center, and most of them are free. chuck berry was from there and played monthly shows at blueberry hill for years. the city separated from st. louis county in 1876, which still confuses people. the population peaked around 857,000 in 1950 and has dropped a lot since then. summers are humid and winters can get pretty cold. the metrolink light rail connects the airport to downtown and the illinois side. the old courthouse is where the dred scott case was first heard in 1847. the eads bridge opened in 1874 and was the first major steel truss bridge in the world. the city's nickname is the gateway to the west, which is where the arch gets its name. t.s. eliot, maya angelou, and josephine baker all grew up there at some point. the blues won their first stanley cup in 2019 after being the worst team in the league in jan. union station was once the largest and busiest passenger rail terminal in the world. it's now a hotel with an aquarium and a ferris wheel next to it. the city has a big bosnian community, one of the largest outside of bosnia. the st. louis symphony is the second oldest symphony orchestra in the country. the missouri botanical garden opened in 1859 and has a huge japanese garden. anyway, that's the gist of it. ask if you want more.",
+    "expected": [
+      "st. louis sits right where the missouri river meets the mississippi. it was founded in 1764 by pierre laclede and auguste chouteau as a fur trading post. the gateway arch was finished on oct. 28, 1965 and opened to visitors in 1967. it's approx. 630 ft. tall and exactly as wide as it is tall, which is kind of neat. the city hosted the 1904 world's fair and the u.s. olympics that same year. those were the first olympics held in north america. the cardinals have won 11 world series titles, second only to the yankees. anheuser-busch has been brewing there since 1852. the city is famous for toasted ravioli, gooey butter cake, and provel cheese. forest park is bigger than central park by about 500 acres. it holds the zoo, the art museum, and the science center, and most of them are free. chuck berry was from there and played monthly shows at blueberry hill for years. the city separated from st. louis county in 1876, which still confuses people. the population peaked around 857,000 in 1950 and has dropped a lot since then. summers are humid and winters can get pretty cold. the metrolink light rail connects the airport to downtown and the illinois side. the old courthouse is where the dred scott case was first heard in 1847. the eads bridge opened in 1874 and was the first major steel truss bridge in the world. the city's nickname is the gateway to the west, which is where the arch gets its name. t.s. eliot, maya angelou, and josephine baker all grew up there at some point. the blues won their first stanley cup in 2019 after being the worst team in the league in jan. union station was once the largest and busiest passenger rail terminal in the world. it's now a hotel with an aquarium and a ferris wheel next to it. the city has a big bosnian community, one of the largest outside of bosnia. the st. louis symphony is the second oldest symphony orchestra in the country",
+      "the missouri botanical garden opened in 1859 and has a huge japanese garden. anyway, that's the gist of it. ask if you want more"
+    ]
+  },
+  {
+    "id": "long-no-whitespace",
+    "category": "length",
+    "input": "https://music.youtube.com/queue?share=1&tracks=bohemian+rhapsody+by+queen,idol+by+yoasobi,kick+back+by+kenshi+yonezu,unravel+by+tk+from+ling+tosite+sigure,gurenge+by+lisa,lemon+by+kenshi+yonezu,specialz+by+king+gnu,bling-bang-bang-born+by+creepy+nuts,odoriko+by+vaundy,shinunoga+e-wa+by+fujii+kaze,night+dancer+by+imase,racing+into+the+night+by+yoasobi,suzume+by+radwimps,sparkle+by+radwimps,the+rumbling+by+sim,cruel+angel%27s+thesis+by+yoko+takahashi,again+by+yui,silhouette+by+kana-boon,blue+bird+by+ikimono-gakari,crossing+field+by+lisa,black+catcher+by+vickeblanka,mixed+nuts+by+official+hige+dandism,subtitle+by+official+hige+dandism,pretender+by+official+hige+dandism,hai+yorokonde+by+kocchi+no+kento,tokyo+flash+by+vaundy,kaikai+kitan+by+eve,where+our+blue+is+by+tatsuya+kitani,show+by+ado,new+genesis+by+ado,usseewa+by+ado,the+brave+by+yoasobi,abyss+by+asca,shukufuku+by+yoasobi,zankyou+sanka+by+aimer,kataomoi+by+aimer,brave+shine+by+aimer,inferno+by+mrs+green+apple,ao+to+natsu+by+mrs+green+apple,dry+flower+by+yuuri,cinderella+boy+by+saucy+dog,marigold+by+aimyon,haru+dorobou+by+yorushika,tada+kimi+ni+hare+by+yorushika,hitchcock+by+yorushika,sayonara+elegy+by+masaki+suda,plastic+love+by+mariya+takeuchi,mayonaka+no+door+by+miki+matsubara,ride+on+time+by+tatsuro+yamashita,fly-day+chinatown+by+yasuha,4%3A00+am+by+taeko+ohnuki,september+by+earth+wind+and+fire,lovers+by+7+and+5,sparkle+by+tatsuro+yamashita,last+summer+whisper+by+anri,telephone+number+by+junko+ohashi,timely+by+anri,midnight+pretenders+by+tomoko+aran,yume+de+aetara+by+radwimps,nandemonaiya+by+radwimps,grand+escape+by+radwimps,hikaru+nara+by+goose+house,renai+circulation+by+kana+hanazawa,connect+by+claris,sugar+song+to+bitter+step+by+unison+square+garden,fighting+gold+by+coda,great+days+by+karen+aoki+and+daisuke+hasegawa,jojo+sono+chi+no+sadame+by+hiroaki+tommy+tominaga,tank+by+seatbelts,the+real+folk+blues+by+mai+yamane,rain+by+seatbelts,blue+by+mai+yamane,catch+the+moment+by+lisa,homura+by+lisa,akeboshi+by+lisa,kawaki+wo+ameku+by+minami,haruka+kanata+by+asian+kung-fu+generation,rewrite+by+asian+kung-fu+generation,hologram+by+nico+touches+the+walls,period+by+chemistry,golden+time+lover+by+sukima+switch,ready+steady+go+by+larc+en+ciel,flyday+chinatown+remix+by+yasuha",
+    "expected": [
+      "https://music.youtube.com/queue?share=1&tracks=bohemian+rhapsody+by+queen,idol+by+yoasobi,kick+back+by+kenshi+yonezu,unravel+by+tk+from+ling+tosite+sigure,gurenge+by+lisa,lemon+by+kenshi+yonezu,specialz+by+king+gnu,bling-bang-bang-born+by+creepy+nuts,odoriko+by+vaundy,shinunoga+e-wa+by+fujii+kaze,night+dancer+by+imase,racing+into+the+night+by+yoasobi,suzume+by+radwimps,sparkle+by+radwimps,the+rumbling+by+sim,cruel+angel%27s+thesis+by+yoko+takahashi,again+by+yui,silhouette+by+kana-boon,blue+bird+by+ikimono-gakari,crossing+field+by+lisa,black+catcher+by+vickeblanka,mixed+nuts+by+official+hige+dandism,subtitle+by+official+hige+dandism,pretender+by+official+hige+dandism,hai+yorokonde+by+kocchi+no+kento,tokyo+flash+by+vaundy,kaikai+kitan+by+eve,where+our+blue+is+by+tatsuya+kitani,show+by+ado,new+genesis+by+ado,usseewa+by+ado,the+brave+by+yoasobi,abyss+by+asca,shukufuku+by+yoasobi,zankyou+sanka+by+aimer,kataomoi+by+aimer,brave+shine+by+aimer,inferno+by+mrs+green+apple,ao+to+natsu+by+mrs+green+apple,dry+flower+by+yuuri,cinderella+boy+by+saucy+dog,marigold+by+aimyon,haru+dorobou+by+yorushika,tada+kimi+ni+hare+by+yorushika,hitchcock+by+yorushika,sayonara+elegy+by+masaki+suda,plastic+love+by+mariya+takeuchi,mayonaka+no+door+by+miki+matsubara,ride+on+time+by+tatsuro+yamashita,fly-day+chinatown+by+yasuha,4%3A00+am+by+taeko+ohnuki,september+by+earth+wind+and+fire,lovers+by+7+and+5,sparkle+by+tatsuro+yamashita,last+summer+whisper+by+anri,telephone+number+by+junko+ohashi,timely+by+anri,midnight+pretenders+by+tomoko+aran,yume+de+aetara+by+radwimps,nandemonaiya+by+radwimps,grand+escape+by+radwimps,hikaru+nara+by+goose+house,renai+circulation+by+kana+hanazawa,connect+by+claris,sugar+song+to+bitter+step+by+unison+square+garden,fighting+gold+by+coda,great+days+by+karen+aoki+and+daisuke+hasegawa,jojo+sono+chi+no+sadame+by+hiroaki+tommy+tominaga,tank+by+seatbelts,the+real+folk+blues+by+mai",
+      "+yamane,rain+by+seatbelts,blue+by+mai+yamane,catch+the+moment+by+lisa,homura+by+lisa,akeboshi+by+lisa,kawaki+wo+ameku+by+minami,haruka+kanata+by+asian+kung-fu+generation,rewrite+by+asian+kung-fu+generation,hologram+by+nico+touches+the+walls,period+by+chemistry,golden+time+lover+by+sukima+switch,ready+steady+go+by+larc+en+ciel,flyday+chinatown+remix+by+yasuha"
+    ]
+  },
+  {
+    "id": "long-queue-runon",
+    "category": "length",
+    "input": "ok, queued the whole playlist. up next is bohemian rhapsody by queen, then idol by yoasobi, then kick back by kenshi yonezu, then unravel by tk from ling tosite sigure, then gurenge by lisa, then lemon by kenshi yonezu, then specialz by king gnu, then bling-bang-bang-born by creepy nuts, then odoriko by vaundy, then shinunoga e-wa by fujii kaze, then night dancer by imase, then racing into the night by yoasobi, then suzume by radwimps, then sparkle by radwimps, then the rumbling by sim, then cruel angel's thesis by yoko takahashi, then again by yui, then silhouette by kana-boon, then blue bird by ikimono-gakari, then crossing field by lisa, then black catcher by vickeblanka, then mixed nuts by official hige dandism, then subtitle by official hige dandism, then pretender by official hige dandism, then hai yorokonde by kocchi no kento, then tokyo flash by vaundy, then kaikai kitan by eve, then where our blue is by tatsuya kitani, then show by ado, then new genesis by ado, then usseewa by ado, then the brave by yoasobi, then abyss by asca, then shukufuku by yoasobi, then zankyou sanka by aimer, then kataomoi by aimer, then brave shine by aimer, then inferno by mrs green apple, then ao to natsu by mrs green apple, then dry flower by yuuri, then cinderella boy by saucy dog, then marigold by aimyon, then haru dorobou by yorushika, then tada kimi ni hare by yorushika, then hitchcock by yorushika, then sayonara elegy by masaki suda, then plastic love by mariya takeuchi, then mayonaka no door by miki matsubara, then ride on time by tatsuro yamashita, then fly-day chinatown by yasuha, then 4:00 am by taeko ohnuki, then september by earth wind and fire, then lovers by 7 and 5, then sparkle by tatsuro yamashita, then last summer whisper by anri, then telephone number by junko ohashi, then timely by anri, then midnight pretenders by tomoko aran, then yume de aetara by radwimps, then nandemonaiya by radwimps, then grand escape by radwimps, then hikaru nara by goose house, then renai circulation by kana hanazawa, and finally connect by claris. that's 64 songs",
+    "expected": [
+      "ok, queued the whole playlist",
+      "up next is bohemian rhapsody by queen, then idol by yoasobi, then kick back by kenshi yonezu, then unravel by tk from ling tosite sigure, then gurenge by lisa, then lemon by kenshi yonezu, then specialz by king gnu, then bling-bang-bang-born by creepy nuts, then odoriko by vaundy, then shinunoga e-wa by fujii kaze, then night dancer by imase, then racing into the night by yoasobi, then suzume by radwimps, then sparkle by radwimps, then the rumbling by sim, then cruel angel's thesis by yoko takahashi, then again by yui, then silhouette by kana-boon, then blue bird by ikimono-gakari, then crossing field by lisa, then black catcher by vickeblanka, then mixed nuts by official hige dandism, then subtitle by official hige dandism, then pretender by official hige dandism, then hai yorokonde by kocchi no kento, then tokyo flash by vaundy, then kaikai kitan by eve, then where our blue is by tatsuya kitani, then show by ado, then new genesis by ado, then usseewa by ado, then the brave by yoasobi, then abyss by asca, then shukufuku by yoasobi, then zankyou sanka by aimer, then kataomoi by aimer, then brave shine by aimer, then inferno by mrs green apple, then ao to natsu by mrs green apple, then dry flower by yuuri, then cinderella boy by saucy dog, then marigold by aimyon, then haru dorobou by yorushika, then tada kimi ni hare by yorushika, then hitchcock by yorushika, then sayonara elegy by masaki suda, then plastic love by mariya takeuchi, then mayonaka no door by miki matsubara, then ride on time by tatsuro yamashita, then fly-day chinatown by yasuha, then 4:00 am by taeko ohnuki, then september by earth wind and fire, then lovers by 7 and 5, then sparkle by tatsuro yamashita, then last summer whisper by anri, then telephone number by junko ohashi, then timely by anri, then midnight pretenders by tomoko aran, then yume de aetara by radwimps, then nandemonaiya by radwimps,",
+      "then grand escape by radwimps, then hikaru nara by goose house, then renai circulation by kana hanazawa, and finally connect by claris",
+      "that's 64 songs"
+    ]
+  },
+  {
+    "id": "list-indented",
+    "category": "list-marker",
+    "input": "  3. indented item",
+    "expected": [
+      "3. indented item"
+    ]
+  },
+  {
+    "id": "list-item-sentences",
+    "category": "list-marker",
+    "input": "1. go home. then sleep.\n2. wake up.",
+    "expected": [
+      "1. go home",
+      "then sleep",
+      "2. wake up"
+    ]
+  },
+  {
+    "id": "list-lettered",
+    "category": "list-marker",
+    "input": "a. first thing\nb. second thing",
+    "expected": [
+      "a. first thing",
+      "b. second thing"
+    ]
+  },
+  {
+    "id": "list-numbered",
+    "category": "list-marker",
+    "input": "1. apples\n2. bananas\n10. cherries",
+    "expected": [
+      "1. apples",
+      "2. bananas",
+      "10. cherries"
+    ]
+  },
+  {
+    "id": "midline-number",
+    "category": "list-marker",
+    "input": "i got 5. then 6",
+    "expected": [
+      "i got 5",
+      "then 6"
+    ]
+  },
+  {
+    "id": "inline-enumeration",
+    "category": "list-marker",
+    "input": "my ranking: 1. frieren 2. dandadan 3. one piece",
+    "expected": [
+      "my ranking: 1. frieren 2. dandadan 3. one piece"
+    ]
+  },
+  {
+    "id": "md-bold-exclaim-italic-trailing-period",
+    "category": "markdown",
+    "input": "**wow!** that's crazy. _truly._",
+    "expected": [
+      "**wow!** that's crazy",
+      "_truly._"
+    ]
+  },
+  {
+    "id": "md-bold-spanning-sentence-break",
+    "category": "markdown",
+    "input": "**this is big. like really big.** ok",
+    "expected": [
+      "**this is big. like really big.** ok"
+    ]
+  },
+  {
+    "id": "md-bullets-and-blockquote",
+    "category": "markdown",
+    "input": "- buy milk.\n- call mom. she misses you\n> quote. more",
+    "expected": [
+      "- buy milk",
+      "- call mom",
+      "she misses you",
+      "> quote",
+      "more"
+    ]
+  },
+  {
+    "id": "md-link-with-periods",
+    "category": "markdown",
+    "input": "read [the docs. seriously](https://docs.python.org/3/library/re.html). it helps",
+    "expected": [
+      "read [the docs. seriously](https://docs.python.org/3/library/re.html)",
+      "it helps"
+    ]
+  },
+  {
+    "id": "mixed-realistic-reply",
+    "category": "markdown",
+    "input": "yeah the bug is in `parse(). split`.\nfix:\n```py\ndef f(x):\n    return x.strip(). lower()\n```\nthat's it. see [docs](https://a.io/guide). ok.",
+    "expected": [
+      "yeah the bug is in `parse(). split`",
+      "fix:",
+      "```py\ndef f(x):\n    return x.strip(). lower()\n```",
+      "that's it",
+      "see [docs](https://a.io/guide)",
+      "ok"
+    ]
+  },
+  {
+    "id": "bold-markdown",
+    "category": "markdown",
+    "input": "**no.** i refuse. that's **final**.",
+    "expected": [
+      "**no.** i refuse",
+      "that's **final**"
+    ]
+  },
+  {
+    "id": "decimals-money",
+    "category": "number",
+    "input": "it costs $5.99. pi is 3.14. use python 3.13. ok",
+    "expected": [
+      "it costs $5.99",
+      "pi is 3.14",
+      "use python 3.13",
+      "ok"
+    ]
+  },
+  {
+    "id": "domain-file-url",
+    "category": "number",
+    "input": "go to google.com. then open package.json. docs at https://example.com/v1.2/guide.html. done",
+    "expected": [
+      "go to google.com",
+      "then open package.json",
+      "docs at https://example.com/v1.2/guide.html",
+      "done"
+    ]
+  },
+  {
+    "id": "times-plain",
+    "category": "number",
+    "input": "see you at 10:30. or 5pm. bye",
+    "expected": [
+      "see you at 10:30",
+      "or 5pm",
+      "bye"
+    ]
+  },
+  {
+    "id": "version-v-prefix",
+    "category": "number",
+    "input": "update to v2.0. it's better. or use v. 3 lol",
+    "expected": [
+      "update to v2.0",
+      "it's better",
+      "or use v. 3 lol"
+    ]
+  },
+  {
+    "id": "only-period",
+    "category": "punct-only",
+    "input": " . \n\n.",
+    "expected": []
+  },
+  {
+    "id": "punct-only-lines",
+    "category": "punct-only",
+    "input": "ok\n.\n...\n?\n!!\nbye",
+    "expected": [
+      "ok",
+      "...",
+      "?",
+      "!!",
+      "bye"
+    ]
+  },
+  {
+    "id": "quote-paren",
+    "category": "quotes",
+    "input": "he said \"stop.\" then left. (like this.) ok. bye",
+    "expected": [
+      "he said \"stop.\" then left",
+      "(like this.) ok",
+      "bye"
+    ]
+  },
+  {
+    "id": "apostrophes-straight-and-curly",
+    "category": "quotes",
+    "input": "don't. it’s fine. y'all know",
+    "expected": [
+      "don't",
+      "it’s fine",
+      "y'all know"
+    ]
+  },
+  {
+    "id": "quote-curly",
+    "category": "quotes",
+    "input": "she said “i’m done. seriously.” and walked off. ok",
+    "expected": [
+      "she said “i’m done. seriously.” and walked off",
+      "ok"
+    ]
+  },
+  {
+    "id": "quote-period-after-closing-quote",
+    "category": "quotes",
+    "input": "he said \"hi\". then left",
+    "expected": [
+      "he said \"hi\"",
+      "then left"
+    ]
+  },
+  {
+    "id": "quote-single-protected",
+    "category": "quotes",
+    "input": "he said 'nope. never.' so yeah",
+    "expected": [
+      "he said 'nope. never.' so yeah"
+    ]
+  },
+  {
+    "id": "quote-straight-balanced-with-apostrophes",
+    "category": "quotes",
+    "input": "he said \"it's over. don't call.\" and hung up. rude",
+    "expected": [
+      "he said \"it's over. don't call.\" and hung up",
+      "rude"
+    ]
+  },
+  {
+    "id": "quote-straight-unbalanced",
+    "category": "quotes",
+    "input": "he goes \"nah. not happening",
+    "expected": [
+      "he goes \"nah",
+      "not happening"
+    ]
+  },
+  {
+    "id": "quote-terminator-before-closing-quote",
+    "category": "quotes",
+    "input": "she said \"no way.\" i laughed",
+    "expected": [
+      "she said \"no way.\" i laughed"
+    ]
+  },
+  {
+    "id": "music-quoted-title",
+    "category": "quotes",
+    "input": "queued \"what is love? baby don't hurt me\" mix. you're no. 4 in line",
+    "expected": [
+      "queued \"what is love? baby don't hurt me\" mix",
+      "you're no. 4 in line"
+    ]
+  },
+  {
+    "id": "spoiler-adjacent-pairs",
+    "category": "spoiler",
+    "input": "||he lies. she knows|| ||they win. lol||. ok",
+    "expected": [
+      "||he lies. she knows|| ||they win. lol||",
+      "ok"
+    ]
+  },
+  {
+    "id": "spoiler-after-sentence",
+    "category": "spoiler",
+    "input": "don't read this. ||he dies. then|| ok.",
+    "expected": [
+      "don't read this",
+      "||he dies. then|| ok"
+    ]
+  },
+  {
+    "id": "spoiler-protects-sentence-break",
+    "category": "spoiler",
+    "input": "spoiler: ||he dies. then she wins.|| crazy right?",
+    "expected": [
+      "spoiler: ||he dies. then she wins.|| crazy right?"
+    ]
+  },
+  {
+    "id": "bang-question-period",
+    "category": "terminator-run",
+    "input": "what!?. no",
+    "expected": [
+      "what!?",
+      "no"
+    ]
+  },
+  {
+    "id": "terminator-runs",
+    "category": "terminator-run",
+    "input": "wait what?! no way!!! huh?!? ok",
+    "expected": [
+      "wait what?!",
+      "no way!!!",
+      "huh?!?",
+      "ok"
+    ]
+  },
+  {
+    "id": "abbrev-whole-token",
+    "category": "token-boundary",
+    "input": "i ate a taco. you are the best. that was the final. i play piano. 5 stars",
+    "expected": [
+      "i ate a taco",
+      "you are the best",
+      "that was the final",
+      "i play piano",
+      "5 stars"
+    ]
+  },
+  {
+    "id": "no-whitespace-no-split",
+    "category": "token-boundary",
+    "input": "ok.bye!hi?yes...no",
+    "expected": [
+      "ok.bye!hi?yes...no"
+    ]
+  },
+  {
+    "id": "sports-recap-pts-fri-vs",
+    "category": "token-boundary",
+    "input": "lakers beat the celtics 112-108. lebron had 31 pts. next game is fri. vs. denver",
+    "expected": [
+      "lakers beat the celtics 112-108",
+      "lebron had 31 pts",
+      "next game is fri. vs. denver"
+    ]
+  },
+  {
+    "id": "etc-end",
+    "category": "trailing-strip",
+    "input": "i like apples, oranges, etc.",
+    "expected": [
+      "i like apples, oranges, etc"
+    ]
+  },
+  {
+    "id": "initialism-end-kept",
+    "category": "trailing-strip",
+    "input": "it starts at 9 a.m.\ni live in the u.s.\nshe has a ph.d.\nhe's from d.c.\ngo U.S.A.",
+    "expected": [
+      "it starts at 9 a.m.",
+      "i live in the u.s.",
+      "she has a ph.d.",
+      "he's from d.c.",
+      "go U.S.A."
+    ]
+  },
+  {
+    "id": "strip-mixed",
+    "category": "trailing-strip",
+    "input": "one. two! three? four.",
+    "expected": [
+      "one",
+      "two!",
+      "three?",
+      "four"
+    ]
+  },
+  {
+    "id": "list-bullets-pm-trailing-ws",
+    "category": "trailing-strip",
+    "input": "showtimes for dune:  \n- 4:30 p.m.\n- 7 p.m. \n- 9:45 p.m.\n\nthe 7 one's imax.",
+    "expected": [
+      "showtimes for dune:",
+      "- 4:30 p.m.",
+      "- 7 p.m.",
+      "- 9:45 p.m.",
+      "the 7 one's imax"
+    ]
+  },
+  {
+    "id": "unicode-emoji-and-ellipsis-char",
+    "category": "unicode",
+    "input": "that's wild 💀. hmm… maybe. idk…",
+    "expected": [
+      "that's wild 💀",
+      "hmm… maybe",
+      "idk…"
+    ]
+  },
+  {
+    "id": "unicode-japanese",
+    "category": "unicode",
+    "input": "そうだね。でも違う。 ok. 本当？ うん! まじで\nわかった。",
+    "expected": [
+      "そうだね。でも違う。 ok",
+      "本当？ うん!",
+      "まじで",
+      "わかった。"
+    ]
+  },
+  {
+    "id": "email-ends-sentence",
+    "category": "url",
+    "input": "email me at bob.smith@mail.co.uk. thanks",
+    "expected": [
+      "email me at bob.smith@mail.co.uk",
+      "thanks"
+    ]
+  },
+  {
+    "id": "file-names",
+    "category": "url",
+    "input": "open package.json. then edit src/main.py and .env. done",
+    "expected": [
+      "open package.json",
+      "then edit src/main.py and .env",
+      "done"
+    ]
+  },
+  {
+    "id": "url-dotted-path-ends-sentence",
+    "category": "url",
+    "input": "check https://example.com/a.b. it's good",
+    "expected": [
+      "check https://example.com/a.b",
+      "it's good"
+    ]
+  },
+  {
+    "id": "url-end-of-line-period-stripped",
+    "category": "url",
+    "input": "source: https://en.wikipedia.org/wiki/Dr._No.",
+    "expected": [
+      "source: https://en.wikipedia.org/wiki/Dr._No"
+    ]
+  },
+  {
+    "id": "url-query-question-mark",
+    "category": "url",
+    "input": "is it https://example.com/?q=1&x=2.5? idk",
+    "expected": [
+      "is it https://example.com/?q=1&x=2.5?",
+      "idk"
+    ]
+  },
+  {
+    "id": "ws-crlf-line-endings",
+    "category": "whitespace",
+    "input": "hey there.\r\n\r\nhow are you? good.\r\n",
+    "expected": [
+      "hey there",
+      "how are you?",
+      "good"
+    ]
+  },
+  {
+    "id": "ws-empty-string",
+    "category": "whitespace",
+    "input": "",
+    "expected": []
+  },
+  {
+    "id": "ws-interior-spaces-preserved",
+    "category": "whitespace",
+    "input": "i   mean.  whatever   man",
+    "expected": [
+      "i   mean",
+      "whatever   man"
+    ]
+  },
+  {
+    "id": "ws-leading-trailing-blank-lines",
+    "category": "whitespace",
+    "input": "\n\n   hey.  \n\n\n\twhat's up?\n\n",
+    "expected": [
+      "hey",
+      "what's up?"
+    ]
+  },
+  {
+    "id": "ws-period-only-lines",
+    "category": "whitespace",
+    "input": "ok\n.\n...\n  .  \nbye",
+    "expected": [
+      "ok",
+      "...",
+      "bye"
+    ]
+  },
+  {
+    "id": "ws-tab-and-multispace-after-terminator",
+    "category": "whitespace",
+    "input": "ok.\tbye!   see ya.  later",
+    "expected": [
+      "ok",
+      "bye!",
+      "see ya",
+      "later"
+    ]
+  },
+  {
+    "id": "ws-whitespace-only",
+    "category": "whitespace",
+    "input": " \n\t\n   \r\n ",
+    "expected": []
+  }
+]

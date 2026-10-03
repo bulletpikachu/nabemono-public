@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nabemono music</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/music.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#add">nabemono</a>
+      <nav aria-label="Music session">
+        <a href="#add" aria-current="page">add music</a>
+        <a href="#queue">queue</a>
+        <a href="#history">library</a>
+        <a href="#radio">radio</a>
+      </nav>
+    </aside>
+    <main id="main">
+      <header class="page-heading"><p class="eyebrow">Nabemono / music</p><h1 id="page-title">add music</h1></header>
+      <section class="now-playing" aria-labelledby="now-title">
+        <div class="artwork"><span id="artwork-fallback" aria-hidden="true">♪</span><img id="now-artwork" alt="" hidden referrerpolicy="no-referrer"></div>
+        <div class="player-details">
+          <p class="eyebrow" id="playback-status">Now playing</p>
+          <h2 id="now-title">Nothing playing yet.</h2>
+          <p id="now-artist" class="muted"></p>
+          <div id="progress-row" class="progress-row"><progress id="progress" aria-label="Track progress" max="1" value="0"></progress><span id="timing">0:00</span></div>
+          <div class="controls">
+            <button id="pause" type="button" disabled>Pause</button>
+            <button id="resume" type="button" disabled hidden>Resume</button>
+            <button id="skip" type="button" disabled>Skip →</button>
+          </div>
+        </div>
+      </section>
+      <p id="notice" role="status" aria-live="polite"></p>
+      <section id="panel-add" class="panel" aria-labelledby="add-heading">
+        <form id="youtube-form">
+          <label for="youtube-url">YouTube video or playlist</label>
+          <div class="form-row"><input id="youtube-url" name="url" type="url" required placeholder="https://youtube.com/watch?v=…"><button class="primary" type="submit">Add to queue →</button></div>
+        </form>
+        <form id="upload-form">
+          <label for="audio-file">Upload an audio file</label>
+          <div class="upload-area"><input id="audio-file" name="file" type="file" required accept=".mp3,.flac,.wav,.ogg,.m4a,.opus,.webm,audio/*" aria-describedby="upload-help"></div>
+          <button type="submit">Upload</button>
+        </form>
+      </section>
+      <section id="panel-radio" class="panel" aria-labelledby="radio-heading" hidden>
+        <div class="section-heading">
+          <div>
+            <h2 id="radio-heading">Radio</h2>
+            <p class="muted">you get one single station</p>
+          </div>
+          <button id="radio-stop" type="button" hidden>Stop</button>
+        </div>
+        <div id="radio-stations" class="station-list"></div>
+        <div id="empty-radio" class="empty" hidden>
+          <p>No radio stations are configured.</p>
+        </div>
+        <p id="radio-resume" class="muted"></p>
+      </section>
+      <section id="panel-queue" class="panel" aria-labelledby="queue-heading" hidden>
+        <div class="section-heading"><h2 id="queue-heading">Up next</h2><p id="remaining" class="muted"></p></div>
+        <ol id="queue" class="track-list"></ol>
+        <div id="empty-queue" class="empty"><p>The queue is empty.</div>
+      </section>
+      <section id="panel-history" class="panel" aria-labelledby="history-heading" hidden>
+        <div class="section-heading"><h2 id="history-heading">Library</h2></div>
+        <ol id="history" class="track-list"></ol>
+        <div id="empty-history" class="empty"><p>No tracks have been played this session.</p></div>
+      </section>
+      <footer>2026</footer>
+    </main>
+  </div>
+  <script src="/assets/music.js" defer></script>
+</body>
+</html>

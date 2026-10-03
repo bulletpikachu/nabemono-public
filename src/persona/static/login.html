@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nabemono login</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/persona.css">
+</head>
+<body class="login-page">
+  <main>
+    <form id="login-form" action="/login" method="post">
+      <div>
+        <label for="password">who are you?</label>
+        <input id="password" name="password" type="password" required autofocus autocomplete="current-password">
+      </div>
+      <p id="login-error" role="alert" hidden></p>
+      <button type="submit">Enter</button>
+    </form>
+  </main>
+  <script src="/assets/persona-login.js" defer></script>
+</body>
+</html>

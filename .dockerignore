@@ -1,0 +1,13 @@
+.git
+.env
+.cache
+venv
+__pycache__
+*.py[cod]
+*.sqlite3
+*.jsonl
+*.csv
+*.zim
+*.zim.partial
+data
+.DS_Store

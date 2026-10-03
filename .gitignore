@@ -1,0 +1,17 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.cache/
+
+affection.csv
+memory.sqlite3
+music_telemetry.sqlite3
+reminders.sqlite3
+response_analytics.jsonl
+*.zim
+*.zim.partial
+data/
+
+canvas.sqlite3

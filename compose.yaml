@@ -1,0 +1,29 @@
+services:
+  nabemono:
+    build: .
+    init: true
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      AFFECTION_PATH: /app/data/affection.csv
+      CANVAS_DB_PATH: /app/data/canvas.sqlite3
+      IMAGE_CACHE_DIR: /app/data/images
+      MEMORY_DB_PATH: /app/data/memory.sqlite3
+      MUSIC_TELEMETRY_PATH: /app/data/music_telemetry.sqlite3
+      MUSIC_UPLOAD_DIR: /app/data/music_uploads
+      MUSIC_WEB_HOST: 0.0.0.0
+      MUSIC_WEB_PORT: 8080
+      PERSONA_DB_PATH: /app/data/persona.sqlite3
+      RESPONSE_ANALYTICS_PATH: /app/data/response_analytics.jsonl
+      WIKIPEDIA_DIR: /app/data/wikipedia
+      REMINDERS_DB_PATH: /app/data/reminders.sqlite3
+    ports:
+      - "${MUSIC_WEB_PUBLISH_HOST:-127.0.0.1}:${MUSIC_WEB_PORT:-8080}:8080"
+    volumes:
+      - nabemono-data:/app/data
+      - model-cache:/home/nabemono/.cache
+
+volumes:
+  nabemono-data:
+  model-cache:

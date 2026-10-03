@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nabemono persona</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/persona.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">nabemono / configuration</p>
+      <h1>persona facts</h1>
+    </div>
+    <button id="logout" class="secondary" type="button">log out</button>
+  </header>
+  <main>
+    <section class="editor" aria-labelledby="editor-heading">
+      <h2 id="editor-heading">add a fact</h2>
+      <form id="fact-form">
+        <input id="fact-id" type="hidden">
+        <label for="fact-key">key</label>
+        <input id="fact-key" required maxlength="100" placeholder="favorite_color">
+        <label for="fact-value">value</label>
+        <textarea id="fact-value" required maxlength="4000" rows="5" placeholder="green"></textarea>
+        <label for="fact-aliases">aliases</label>
+        <input id="fact-aliases" maxlength="2100" placeholder="favorite colour, preferred color">
+        <p class="hint">comma-separated alternative ways to ask for this fact</p>
+        <div class="actions">
+          <button id="save" type="submit">save fact</button>
+          <button id="cancel-edit" class="secondary" type="button" hidden>cancel edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="facts" aria-labelledby="facts-heading">
+      <div class="section-heading">
+        <h2 id="facts-heading">facts</h2>
+        <input id="search" type="search" placeholder="search persona facts" aria-label="Search persona facts">
+      </div>
+      <p id="notice" role="status" aria-live="polite"></p>
+      <div id="fact-list"></div>
+      <p id="empty" class="empty" hidden>No persona facts yet.</p>
+    </section>
+  </main>
+  <script src="/assets/persona.js" defer></script>
+</body>
+</html>
